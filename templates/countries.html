@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+	<table class="table table-condensed table-striped">
+		<thead>
+			<th>Country</th>
+			<th>ClientRequestBytes_max</th>
+			<th>ClientRequestBytes_min</th>
+		</thead>
+		<tbody>
+			{% for country in countries %}
+			<tr>
+        <td>{{country.ClientCountry}}</td>
+				<td>{{country.ClientRequestBytes_max}}</td>
+				<td>{{country.ClientRequestBytes_min}}</td>
+      </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+	<p>{{countries}}</p>
+  </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block body %}
+<div>
+  <p> Report is {{report_id}} </p>
+  <p> Min: {{'%0.2f' % stats.min|float}} Standard Dev {{'%0.2f' % stats.std|float}} Max {{'%0.2f' % stats.max|float}} </p>
+  <p> {{data}}</p>
+
+  <p> Would be cool now to get some graphs (from now on we follow Adam)</p>
+
+
+    <p> {{img}}</p>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block body %}
+  <div>
+    <p>{{data.n_articles}} articles in the database.</p>
+
+    <table class="table table-condensed table-striped">
+      <thead>
+        <th>Newspaper</th>
+        <th>Article Count</th>
+        <th>Average Article Word Count</th>
+      </thead>
+      <tbody>
+        {% for paper in papers %}
+        <tr>
+          <td><a href="/newspaper?newspaper_id={{paper.newspaper_id}}">{{paper.newspaper}}</a></td>
+          <td>{{"%4.0f"|format(paper.article_count)}}</td>
+          <td>{{"%4.1f"|format(paper.average_article_length)}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+{% endblock %}
